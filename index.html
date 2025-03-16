@@ -2,15 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="3; url=https://fundibangla.blogspot.com/">
+    <meta http-equiv="refresh" content="4; url=https://fundibangla.blogspot.com/">
     <title>Redirecting...</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00C6FF, #0072FF);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,34 +19,45 @@
         }
         .container {
             text-align: center;
-            background: #111;
-            padding: 30px;
+            background: white;
+            padding: 40px;
             border-radius: 15px;
-            border: 2px solid #3498db;
+            border: 3px solid #0072FF;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1s ease-in-out;
+            max-width: 450px;
         }
         h1 {
-            color: #e74c3c;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #e74c3c;
+            color: #0072FF;
+            margin-bottom: 15px;
+            font-size: 30px;
+            text-shadow: 0 0 5px #00C6FF;
         }
         .loader {
-            border: 6px solid #f3f3f3;
-            border-top: 6px solid #3498db;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #0072FF;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
         p {
-            color: #fff;
+            color: #333;
             margin-top: 20px;
+            font-size: 16px;
         }
         a {
             text-decoration: none;
-            color: #3498db;
+            color: #FF5722;
             font-weight: bold;
+        }
+        img {
+            width: 130px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 3px solid #0072FF;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -56,21 +67,15 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
-        img {
-            width: 150px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid #3498db;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="logo.png" alt="Fundi Bangla Logo">
-        <h1>Redirecting to Fundibangla...</h1>
+        <h1>Welcome to Fundi Bangla</h1>
         <div class="loader"></div>
-        <p>If you are not redirected, <a href="https://fundibangla.blogspot.com/">click here</a>.</p>
+        <p>Redirecting to our main website...</p>
+        <p>If not redirected, <a href="https://fundibangla.blogspot.com/">click here</a>.</p>
     </div>
 </body>
 </html>
