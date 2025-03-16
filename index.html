@@ -10,7 +10,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #00C6FF, #0072FF);
+            background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,45 +19,50 @@
         }
         .container {
             text-align: center;
-            background: white;
+            background: #ffffff;
             padding: 40px;
             border-radius: 15px;
-            border: 3px solid #0072FF;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #1E90FF;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             animation: fadeIn 1s ease-in-out;
-            max-width: 450px;
+            max-width: 500px;
         }
         h1 {
-            color: #0072FF;
+            color: #1E90FF;
             margin-bottom: 15px;
-            font-size: 30px;
-            text-shadow: 0 0 5px #00C6FF;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
         .loader {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #0072FF;
+            border: 5px solid #f0f0f0;
+            border-top: 5px solid #1E90FF;
             border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            animation: spin 1s linear infinite;
+            width: 70px;
+            height: 70px;
+            animation: spin 0.8s linear infinite;
             margin: 20px auto;
         }
         p {
             color: #333;
-            margin-top: 20px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 14px;
         }
         a {
             text-decoration: none;
-            color: #FF5722;
+            color: #FF4500;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #1E90FF;
         }
         img {
-            width: 130px;
+            width: 120px;
             height: auto;
-            border-radius: 15px;
+            border-radius: 10px;
             margin-bottom: 20px;
-            border: 3px solid #0072FF;
+            border: 2px solid #1E90FF;
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
