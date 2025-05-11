@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share YouTube Video</title>
+    <script src='//whephiwums.com/sdk.js' data-zone='9168633' data-sdk='show_9168633'></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .input-section {
+            margin: 20px auto;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #007BFF;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .scroll-buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .video {
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 480px;
+            max-width: 100%;
+            position: relative;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .remove-btn:hover {
+            background: darkred;
+        }
+        #videoCounter {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        #scrollUpBtn {
+            display: none;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            2: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+   Share YouTube Video
+</header>
+
+<div class="input-section">
+    <input type="text" id="videoLink" placeholder="Enter YouTube Video Link">
+    <button onclick="addVideo()">Add Video</button>
+</div>
+
+<p id="videoCounter">Videos Added: 0 / 50</p>
+
+<!-- Scroll Down বাটন সবসময় উপরে থাকবে -->
+<div class="scroll-buttons">
+    <button onclick="scrollToBottom()">⬇ Scroll Down</button>
+</div>
+
+<p id="message" style="color: red;"></p>
+
+<div class="video-container" id="videoContainer">
+    <!-- Videos will be added here -->
+</div>
+
+<!-- Scroll Up বাটন প্রথমে লুকানো থাকবে, ভিডিও যোগ করলে দেখাবে -->
+<div class="scroll-buttons">
+    <button id="scrollUpBtn" onclick="scrollToTop()">⬆ Scroll Up</button>
+</div>
+
+<footer>
+    <p>&copy; Telegram. All rights reserved.</p>
+</footer>
+
+<script>
+    const MAX_VIDEOS = 50;
+    let videoCount = 0;
+
+    function getYouTubeID(url) {
+        const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/))([^?&]+)/);
+        return match ? match[1] : null;
+    }
+
+    function addVideo() {
+        const videoContainer = document.getElementById("videoContainer");
+        const videoLink = document.getElementById("videoLink").value.trim();
+        const message = document.getElementById("message");
+        const videoCounter = document.getElementById("videoCounter");
+        const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+        message.textContent = "";
+
+        if (!videoLink) {
+            message.textContent = "Please enter a YouTube video link.";
+            return;
+        }
+
+        if (videoCount >= MAX_VIDEOS) {
+            message.textContent = "You can only add up to 50 videos.";
+            return;
+        }
+
+        const videoId = getYouTubeID(videoLink);
+
+        if (!videoId) {
+            message.textContent = "Invalid YouTube link. Please enter a correct link.";
+            return;
+        }
+
+        // Create a div for the video
+        const videoDiv = document.createElement("div");
+        videoDiv.className = "video";
+
+        // Create iframe element for the video (144p Resolution)
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&playsinline=1&vq=tiny&controls=1`;
+        iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.id = `player-${videoId}`;
+
+        // Create remove button
+        const removeBtn = document.createElement("button");
+        removeBtn.className = "remove-btn";
+        removeBtn.innerText = "X";
+        removeBtn.onclick = () => {
+            videoContainer.removeChild(videoDiv);
+            videoCount--;
+            updateVideoCounter();
+            if (videoCount === 0) {
+                scrollUpBtn.style.display = "none";
+            }
+        };
+
+        // Append iframe and remove button to the div
+        videoDiv.appendChild(iframe);
+        videoDiv.appendChild(removeBtn);
+
+        // Add the video div to the video container
+        videoContainer.appendChild(videoDiv);
+
+        // Show Scroll Up button
+        scrollUpBtn.style.display = "block";
+
+        // Increment video count and update counter
+        videoCount++;
+        updateVideoCounter();
+
+        // Clear the input field
+        document.getElementById("videoLink").value = "";
+
+        // Show ads after every 4 videos
+        if (videoCount % 4 === 0) {
+            showMonetagAd();
+        }
+    }
+
+    function updateVideoCounter() {
+        document.getElementById("videoCounter").textContent = `Videos Added: ${videoCount} / ${MAX_VIDEOS}`;
+    }
+function showMonetagAd() {
+        if (window.show_9168633) {
+            show_9168633();
+        }
+    }
+    
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function scrollToBottom() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+    
+
+</script>
+
+</body>
+</html>
