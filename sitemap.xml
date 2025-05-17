@@ -1,70 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://fundi-bangla.github.io/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post1.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post3.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post4.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post5.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post6.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post7.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post8.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post9.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://fundi-bangla.github.io/post10.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://fundi-bangla.github.io/</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/Allapps-tool-index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/Allgame-index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/Sanada-Uromastyx-post-index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/i-AI-information-post-index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/business-plan-post-index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/post1.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/bmw%20information.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/YTviews&watchtimeBoost-index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/game%20spin%20index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://fundi-bangla.github.io/Tictac%20game%20index.html</loc>
+<lastmod>2025-05-17T06:31:31+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>
