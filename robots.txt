@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fundi-bangla.github.io/sitemap.xml
